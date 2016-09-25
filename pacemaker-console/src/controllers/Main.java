@@ -37,16 +37,8 @@ public class Main {
 		outJson.writeObject(users);
 		out.close();
 		outJson.close();
-		
-		/**
-		 * logger.log("Serializing contacts to XML"); XStream xstreamJson = new
-		 * XStream(new JsonHierarchicalStreamDriver() { public
-		 * HierarchicalStreamWriter createWriter(Writer writer) { return new
-		 * JsonWriter(writer, JsonWriter.DROP_ROOT_MODE); } });
-		 * ObjectOutputStream outJson = xstreamJson.createObjectOutputStream(new
-		 * FileWriter("users.xml")); out.writeObject(users); out.close();
-		 */
 
 		logger.log("Finished - shutting down");
+		
 	}
 }
