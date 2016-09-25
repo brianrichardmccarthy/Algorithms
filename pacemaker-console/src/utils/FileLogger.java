@@ -1,8 +1,6 @@
 package utils;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileLogger {
@@ -11,22 +9,30 @@ public class FileLogger {
 	private FileLogger() {
 	}
 
+	/**
+	 * Allows the user to use the FileLogger.<br>Only allows for one instance to be created.
+	 * @return logger object
+	 */
 	public static FileLogger getLogger() {
 		if (logger == null)
 			logger = new FileLogger();
 		return logger;
 	}
 
+	/**
+	 * Create a text file called "log.txt"
+	 * @param msg (String -  to be added to log)
+	 * @return true if successful, else false if a error is thrown.
+	 */
 	public boolean log(String msg) {
-		try {
-			PrintWriter writer = new PrintWriter(new FileWriter("log.txt", true));
-			writer.println(msg);
-			writer.close();
-		} catch (FileNotFoundException ex) {
-			return (false);
-		} catch (IOException ex) {
-			return (false);
-		}
-		return (true);
+			PrintWriter writer;
+			try {
+				writer = new PrintWriter(new FileWriter("log.txt", true));
+				writer.println(msg);
+				writer.close();
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
 	}
 }

@@ -18,6 +18,7 @@ public class Main {
 		FileLogger logger = FileLogger.getLogger();
 		logger.log("Creating user list");
 
+		// Exercise: Convert Array List to linked list.
 		List<User> users = new LinkedList<User>();
 		// List<User> users = new ArrayList<User>();
 
@@ -31,10 +32,13 @@ public class Main {
 		ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter("users.xml"));
 		out.writeObject(users);
 
+		// Exercise: Create a users.json file.
 		logger.log("Serializing contacts to JSON");
 		XStream xstreamJson = new XStream(new JsonHierarchicalStreamDriver());
 		ObjectOutputStream outJson = xstreamJson.createObjectOutputStream(new FileWriter("users.json"));
 		outJson.writeObject(users);
+		
+		// close the file writers
 		out.close();
 		outJson.close();
 
