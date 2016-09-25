@@ -21,10 +21,13 @@ public class BuggyStringReverse {
 
 		// initiate vars
 		String rev = "";
-		int counter = 0;
 
-		for (int i = 0; i < s.length(); i++) 
-			rev += s.charAt(s.length() - ++counter);
+		/**
+		 * Lab02 Exercise<br>
+		 * FIx the loop to reverse a given String.
+		 */
+		for (int i = 1; i <= s.length(); i++) 
+			rev += s.charAt(s.length() - i);
 		
 		return rev;
 	}
