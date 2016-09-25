@@ -6,8 +6,13 @@ import org.junit.Test;
 
 public class WordListTest {
 
+	// url to word file
 	private static final String url = "https://dl.dropbox.com/u/18678304/2011/BSc2/words.txt";
 
+	/**
+	 * 
+	 * @throws Exception 
+	 */
 	@Test
 	public void testAddString() throws Exception {
 		StringSearchInterface wordList;
