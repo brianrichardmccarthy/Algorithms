@@ -3,6 +3,7 @@ package controllers;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class Main {
 		pacemakerAPI.createUser("Homer", "Simpson", "homer@simpson.com", "secret");
 		pacemakerAPI.createUser("Lisa", "Simpson", "lisa@simpson.com", "secret");
 
-		List<User> users = pacemakerAPI.getUsers();
+		Collection<User> users = pacemakerAPI.getUsers();
 		System.out.println(users);
 	}
 }
