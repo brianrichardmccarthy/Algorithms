@@ -2,12 +2,16 @@ package models;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.common.base.Objects;
 
 public class User {
 
 	private static Long counter = 0l;
 
+	public Map<Long, Activity> activities = new HashMap<>();
 	public Long id;
 	public String firstName;
 	public String lastName;
