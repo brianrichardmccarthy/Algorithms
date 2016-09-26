@@ -1,0 +1,22 @@
+{"object-stream": {
+  "linked-list": [
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Lisa",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    }
+  ]
+}}
