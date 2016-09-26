@@ -1,37 +1,25 @@
 package models;
-import static org.junit.Assert.assertEquals;
 
-import java.util.Collection;
+import static org.junit.Assert.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import controllers.PacemakerAPI;
-import models.User;
-
-
 public class UserTest {
-	User homer = new User("Homer", "Simpson", "homer@simpson.com", "secret");
-	PacemakerAPI pacemakerAPI;
-	Collection<User> users;
-	
-	@Before
-	public void setUp() {
-		pacemakerAPI = new PacemakerAPI();
+	private User[] users = { new User("marge", "simpson", "marge@simpson.com", "secret"),
+			new User("lisa", "simpson", "lisa@simpson.com", "secret"),
+			new User("bart", "simpson", "bart@simpson.com", "secret"),
+			new User("maggie", "simpson", "maggie@simpson.com", "secret") };
+	User homer = new User("homer", "simpson", "homer@simpson.com", "secret");
 
-		pacemakerAPI.createUser("Bart", "Simpson", "bart@simpson.com", "secret");
-		pacemakerAPI.createUser("Homer", "Simpson", "homer@simpson.com", "secret");
-		pacemakerAPI.createUser("Lisa", "Simpson", " lisa@simpson.com", "secret");
-
-		users = pacemakerAPI.getUsers();
-	}
-	
 	@Test
 	public void testCreate() {
-		assertEquals("Homer", homer.firstName);
-		assertEquals("Simpson", homer.lastName);
+		assertEquals("homer", homer.firstName);
+		assertEquals("simpson", homer.lastName);
 		assertEquals("homer@simpson.com", homer.email);
 		assertEquals("secret", homer.password);
 	}
@@ -42,11 +30,11 @@ public class UserTest {
 		for (User user : users) {
 			ids.add(user.id);
 		}
-		assertEquals(users.size(), ids.size());
+		assertEquals(users.length, ids.size());
 	}
 
 	@Test
 	public void testToString() {
-		assertEquals("User{Homer, Simpson, secret, homer@simpson.com}", homer.toString());
+		assertEquals("User{homer, simpson, secret, homer@simpson.com}", homer.toString());
 	}
 }
