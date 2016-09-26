@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Optional;
 
 public class Activity {
 	static Long counter = 0l;
